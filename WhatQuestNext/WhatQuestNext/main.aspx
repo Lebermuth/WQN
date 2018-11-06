@@ -17,9 +17,9 @@
     <div>
     
     </div>
-        <asp:Label ID="lblTest" runat="server" style="z-index: 1; left: 287px; top: 358px; position: absolute" Text="test"></asp:Label>
-        <asp:Button ID="btnSearch" runat="server" style="z-index: 1; left: 246px; top: 279px; position: absolute" Text="Search Character" OnClick="LoadCharacter" />
-        <asp:TextBox ID="txtUsername" runat="server" style="z-index: 1; left: 274px; top: 216px; position: absolute" ToolTip="Enter username"></asp:TextBox>
+        <asp:Label ID="lblTest" runat="server" style="z-index: 1; left: 341px; top: 358px; position: absolute"></asp:Label>
+        <asp:Button ID="btnSearch" runat="server" style="z-index: 1; left: 290px; top: 277px; position: absolute" Text="Search Character" OnClick="LoadCharacter" />
+        <asp:TextBox ID="txtUsername" runat="server" style="z-index: 1; left: 302px; top: 216px; position: absolute" ToolTip="Enter username"></asp:TextBox>
         <asp:Table ID="tblCharacterStats" runat="server" BorderStyle="Solid" BorderWidth="1px" style="z-index: 1; left: 824px; top: 177px; position: absolute; height: 42px; width: 945px">
             <asp:TableRow ID="Attack" runat="server">
             </asp:TableRow>

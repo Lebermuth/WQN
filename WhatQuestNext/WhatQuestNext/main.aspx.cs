@@ -5,6 +5,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Net;
 using System.IO;
+using System.Data;
 
 namespace WhatQuestNext
 {
@@ -36,6 +37,78 @@ namespace WhatQuestNext
         //Skill Hunter = new Skill(22, 0, 0, 0);
         //Skill Construction = new Skill(23, 0, 0, 0);
 
+        static DataTable quests = MakeQuestTable();
+
+        static DataTable MakeQuestTable()
+        {
+            DataTable table = new DataTable();
+
+            //Items...future update. Also list item requirements for each quest.
+            //List<string> items = new List<string> { };
+
+            table.Columns.Add("P2P", typeof(bool));
+            table.Columns.Add("Completed", typeof(bool));
+            table.Columns.Add("Name", typeof(string));
+            //table.Columns.Add("Items", typeof(List<string>)); //Comma separated items, split into list if used later
+            table.Columns.Add("Attack", typeof(int));
+            table.Columns.Add("Defence", typeof(int));
+            table.Columns.Add("Strength", typeof(int));
+            table.Columns.Add("Hitpoints", typeof(int));
+            table.Columns.Add("Ranged", typeof(int));
+            table.Columns.Add("Prayer", typeof(int));
+            table.Columns.Add("Magic", typeof(int));
+            table.Columns.Add("Cooking", typeof(int));
+            table.Columns.Add("Woodcutting", typeof(int));
+            table.Columns.Add("Fletching", typeof(int));
+            table.Columns.Add("Fishing", typeof(int));
+            table.Columns.Add("Firemaking", typeof(int));
+            table.Columns.Add("Crafting", typeof(int));
+            table.Columns.Add("Smithing", typeof(int));
+            table.Columns.Add("Mining", typeof(int));
+            table.Columns.Add("Herblore", typeof(int));
+            table.Columns.Add("Agility", typeof(int));
+            table.Columns.Add("Thieving", typeof(int));
+            table.Columns.Add("Slayer", typeof(int));
+            table.Columns.Add("Farming", typeof(int));
+            table.Columns.Add("Runecraft", typeof(int));
+            table.Columns.Add("Hunter", typeof(int));
+            table.Columns.Add("Construction", typeof(int));
+
+            // Template....
+            // quests.Rows[0][i].ToString();
+            // where i ==      0      1         2        3     4   5   6      7       8     9       10    11    12     13   14     15        16        17    18   19     20     21      22     23    24        25
+            // table.Rows.Add(p2p, completed, questname, atk, def, str, hp, ranged, prayer, mage, cooking, wc, fletch, fish, fm, crafting, smithing, mining, herb, agi, thief, slayer, farming, rc, hunter, construction)
+
+            //------------------------F2P QUESTS--------------------------
+            // http://oldschoolrunescape.wikia.com/wiki/Quests/Free-to-play
+
+            table.Rows.Add(0, 0, "Cook's Assistant", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            table.Rows.Add(0, 0, "The Corsair Curse", atk, def, str, hp, ranged, prayer, mage, cooking, wc, 0, fish, fm, crafting, smithing, mining, 0, 0, 0, 0, 0, rc, 0, 0);
+            table.Rows.Add(0, 0, "Demon Slayer", atk, def, str, hp, ranged, prayer, mage, cooking, wc, 0, fish, fm, crafting, smithing, mining, 0, 0, 0, 0, 0, rc, 0, 0);
+            table.Rows.Add(0, 0, "Ernest the Chicken", atk, def, str, hp, ranged, prayer, mage, cooking, wc, 0, fish, fm, crafting, smithing, mining, 0, 0, 0, 0, 0, rc, 0, 0);
+            table.Rows.Add(0, 0, "Fletching", atk, def, str, hp, ranged, prayer, mage, cooking, wc, 0, fish, fm, crafting, smithing, mining, 0, 0, 0, 0, 0, rc, 0, 0);
+            table.Rows.Add(0, 0, "Imp Catcher", atk, def, str, hp, ranged, prayer, mage, cooking, wc, 0, fish, fm, crafting, smithing, mining, 0, 0, 0, 0, 0, rc, 0, 0);
+            table.Rows.Add(0, 0, "The Knight's Sword", atk, def, str, hp, ranged, prayer, mage, cooking, wc, 0, fish, fm, crafting, smithing, mining, 0, 0, 0, 0, 0, rc, 0, 0);
+            table.Rows.Add(0, 0, "Misthalin Mystery", atk, def, str, hp, ranged, prayer, mage, cooking, wc, 0, fish, fm, crafting, smithing, mining, 0, 0, 0, 0, 0, rc, 0, 0);
+            table.Rows.Add(0, 0, "Pirate's Treasure", atk, def, str, hp, ranged, prayer, mage, cooking, wc, 0, fish, fm, crafting, smithing, mining, 0, 0, 0, 0, 0, rc, 0, 0);
+            table.Rows.Add(0, 0, "Prince Ali Rescue", atk, def, str, hp, ranged, prayer, mage, cooking, wc, 0, fish, fm, crafting, smithing, mining, 0, 0, 0, 0, 0, rc, 0, 0);
+            table.Rows.Add(0, 0, "The Restless Ghost", atk, def, str, hp, ranged, prayer, mage, cooking, wc, 0, fish, fm, crafting, smithing, mining, 0, 0, 0, 0, 0, rc, 0, 0);
+            table.Rows.Add(0, 0, "Romeo & Juliet", atk, def, str, hp, ranged, prayer, mage, cooking, wc, 0, fish, fm, crafting, smithing, mining, 0, 0, 0, 0, 0, rc, 0, 0);
+            table.Rows.Add(0, 0, "Rune Mysteries", atk, def, str, hp, ranged, prayer, mage, cooking, wc, 0, fish, fm, crafting, smithing, mining, 0, 0, 0, 0, 0, rc, 0, 0);
+            table.Rows.Add(0, 0, "Sheep Shearer", atk, def, str, hp, ranged, prayer, mage, cooking, wc, 0, fish, fm, crafting, smithing, mining, 0, 0, 0, 0, 0, rc, 0, 0);
+            table.Rows.Add(0, 0, "Shield of Arrav", atk, def, str, hp, ranged, prayer, mage, cooking, wc, 0, fish, fm, crafting, smithing, mining, 0, 0, 0, 0, 0, rc, 0, 0);
+            table.Rows.Add(0, 0, "Witch's Potion", atk, def, str, hp, ranged, prayer, mage, cooking, wc, 0, fish, fm, crafting, smithing, mining, 0, 0, 0, 0, 0, rc, 0, 0);
+
+            //Big Chompy Bird Hunting
+            //table.Rows.Add(1, 0, "Big Chompy Bird Hunting", 0, 0, 0, 0, 30, 0, 0, 30, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            //items.Clear();
+
+
+
+            return table;
+        }
+
+
         class Quest
         {
             public int id { get; }
@@ -64,7 +137,10 @@ namespace WhatQuestNext
         
         protected void Page_Load(object sender, EventArgs e)
         {
-        
+            MakeQuestTable();
+
+            lblTest.Text = quests.Rows[0][1].ToString();
+
         }
 
         protected void LoadCharacter(object sender, EventArgs e)
